@@ -1,3 +1,4 @@
+require('./ignoreUnknownPropsError')
 require('./node_modules/jest-enzyme/lib/index');
 
 const JSDOM = require('jsdom').JSDOM;                    
