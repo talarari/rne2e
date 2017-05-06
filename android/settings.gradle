@@ -1,0 +1,3 @@
+rootProject.name = 'rne2e'
+
+include ':app'
