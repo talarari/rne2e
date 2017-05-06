@@ -1,4 +1,4 @@
-// require('./node_modules/jest-enzyme/lib/index');
+require('./node_modules/jest-enzyme/lib/index');
 
 const JSDOM = require('jsdom').JSDOM;                    
 const dom = new JSDOM(``);

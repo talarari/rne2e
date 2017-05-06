@@ -5,7 +5,7 @@ import SomeComp from '../src/SomeComp';
 jest.useFakeTimers()
 // Note: test renderer must be required after react-native.
 import renderer from 'react-test-renderer';
-import { shallow,mount } from 'enzyme'
+import { shallow, mount } from 'enzyme'
 
 import { Text, TextInput } from 'react-native'
 it('renders correctly', () => {
@@ -20,15 +20,15 @@ it('something', () => {
   const wrapper = mount(
     <Index />
   );
-   console.log('1',wrapper.find(Text).text());
-   console.log('2',wrapper.find(Text).text());
+  expect(wrapper.find({ testID: 'state-text' }).text()).toBe('nothing');
 
- jest.runAllTimers();
+  jest.runTimersToTime(1000);
+  expect(wrapper.find({ testID: 'state-text' }).text()).toBe('message after first timer');
 
-   console.log('3',wrapper.find(Text).text());
+  jest.runTimersToTime(2000);
+  expect(wrapper.find({ testID: 'state-text' }).text()).toBe('message after second timer');
 
-  wrapper.find(TextInput).simulate('change', {nativeEvent: {text: 'tal'}});
-  // jest.runAllTicks()
-   console.log('4',wrapper.find(Text).text());
+  wrapper.find(TextInput).simulate('change', { nativeEvent: { text: 'some text' } });
+  expect(wrapper.find({ testID: 'state-text' }).text()).toBe('some text');
 
 });

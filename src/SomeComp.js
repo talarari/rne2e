@@ -9,21 +9,24 @@ export default class SomeComp extends React.Component {
         }
     }
     componentDidMount() {
-        console.log('componentDidMount---')
         setTimeout(() => {
-            console.log('timer---')
             this.setState({
-                text: 'message after timer'
+                text: 'message after first timer'
             })
         }, 1000)
+
+        setTimeout(() => {
+            this.setState({
+                text: 'message after second timer'
+            })
+        }, 2000)
     }
     render() {
-        console.log('render---')
         return (
             <Animated.View>
-                {/*{[1, 2, 3].map(x => <Text key={x}>{x}</Text>)}*/}
+                {[1, 2, 3].map(x => <Text testID={`test-${x}`} key={x}>{x}</Text>)}
                 <TextInput onChange={(event) => this.setState({ text: event.nativeEvent.text })} />
-                <Text>{this.state.text}</Text>
+                <Text testID={'state-text'}>{this.state.text}</Text>
                 <ActivityIndicator />
             </Animated.View>
         )
