@@ -22,8 +22,7 @@ describe('index', async () => {
             <SomeComp />
         );
 
-
-        const animatedShow = wrapper.find('AnimatedComponent').findWhere(x => x.prop('testID') === 'animated-text-1').first();
+        const animatedShow = wrapper.findWhere(x => x.prop('testID') === 'animated-text-1').last();
         console.log(animatedShow.prop('style'))
         await delay(100)
         console.log(animatedShow.prop('style'))
