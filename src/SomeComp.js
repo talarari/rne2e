@@ -1,5 +1,6 @@
 import React from 'react'
 import { View, Text, ActivityIndicator, Animated, TextInput } from 'react-native'
+import Posts from './Posts'
 
 export default class SomeComp extends React.Component {
     constructor(props) {
@@ -20,6 +21,7 @@ export default class SomeComp extends React.Component {
                 text: 'message after second timer'
             })
         }, 2000)
+
     }
     render() {
         return (
@@ -28,6 +30,7 @@ export default class SomeComp extends React.Component {
                 <TextInput onChange={(event) => this.setState({ text: event.nativeEvent.text })} />
                 <Text testID={'state-text'}>{this.state.text}</Text>
                 <ActivityIndicator />
+                <Posts/>
             </Animated.View>
         )
     }
