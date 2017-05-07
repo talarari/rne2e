@@ -16,13 +16,16 @@ import { mount } from 'enzyme'
 import SomeComp from '../src/SomeComp'
 import toJson from 'enzyme-to-json';
 
+const findByTestID = function (testId){
+    return this.findWhere(x => x.prop('testID') === testId).last();
+}
 describe('index', async () => {
     it('should do something', async () => {
         const wrapper = mount(
             <SomeComp />
         );
 
-        const animatedShow = wrapper.findWhere(x => x.prop('testID') === 'animated-text-1').last();
+        const animatedShow = wrapper::findByTestID('animated-text-1')
         console.log(animatedShow.prop('style'))
         await delay(100)
         console.log(animatedShow.prop('style'))
