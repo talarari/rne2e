@@ -27,12 +27,12 @@ export default class SomeComp extends React.Component {
     render() {
         return (
             <Animated.View>
-                {/*{[1, 2, 3].map(x => <Text testID={`test-${x}`} key={x}>{x}</Text>)}
+                {[1, 2, 3].map(x => <Text testID={`test-${x}`} key={x}>{x}</Text>)}
                 <TextInput onChange={(event) => this.setState({ text: event.nativeEvent.text })} />
-                <Text testID={'state-text'}>{this.state.text}</Text>*/}
+                <Text testID={'state-text'}>{this.state.text}</Text>
                 <AnimatedShow testID={'animated-text-1'}/>
-                {/*<ActivityIndicator />
-                <Posts/>*/}
+                <ActivityIndicator />
+                <Posts/>
             </Animated.View>
         )
     }
