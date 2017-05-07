@@ -6,7 +6,7 @@ import SomeComp from '../src/SomeComp';
 // Note: test renderer must be required after react-native.
 import renderer from 'react-test-renderer';
 import { shallow, mount } from 'enzyme'
-import toJson from 'enzyme-to-json';
+
 import { Text, TextInput } from 'react-native'
 it('renders correctly', () => {
   const tree = renderer.create(

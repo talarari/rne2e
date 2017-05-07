@@ -21,12 +21,14 @@ describe('index', async () => {
         const wrapper = mount(
             <SomeComp />
         );
-        console.log(JSON.stringify(toJson(wrapper.findWhere(x => x.prop('testID') === 'animated-text-1').first())))
-        await delay(100)
-        console.log(JSON.stringify(toJson(wrapper.findWhere(x => x.prop('testID') === 'animated-text-1').first())))
 
+
+        const animatedShow = wrapper.find('AnimatedComponent').findWhere(x => x.prop('testID') === 'animated-text-1').first();
+        console.log(animatedShow.prop('style'))
+        await delay(100)
+        console.log(animatedShow.prop('style'))
         await delay(2000)
-        console.log(JSON.stringify(toJson(wrapper.findWhere(x => x.prop('testID') === 'animated-text-1').first())))
+        console.log(animatedShow.prop('style'))
 
 
     })
