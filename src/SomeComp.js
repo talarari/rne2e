@@ -3,6 +3,7 @@ import { View, Text, ActivityIndicator, Animated, TextInput } from 'react-native
 import Posts from './Posts'
 import AnimatedShow from './AnimatedShow'
 
+
 export default class SomeComp extends React.Component {
     constructor(props) {
         super(props)
@@ -32,7 +33,7 @@ export default class SomeComp extends React.Component {
                 {[1, 2, 3].map(x => <Text testID={`test-${x}`} key={x}>{x}</Text>)}
                 <TextInput onChange={(event) => this.setState({ text: event.nativeEvent.text })} />
                 <Text testID={'state-text'}>{this.state.text}</Text>
-                <AnimatedShow testID={'animated-text-1'}/>
+                <AnimatedShow/>
                 <ActivityIndicator />
                 <Posts/>
             </View>

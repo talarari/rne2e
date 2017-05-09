@@ -20,9 +20,9 @@ export default class AnimatedShow extends React.Component {
     }
     render() {
         return (
-            <Animated.View testID={this.props.testID} style={{ opacity: this.animatedValue }}>
+            <View testID={'animated-text-1'} style={{ opacity: this.animatedValue }}>
                 <Text>animated text</Text>
-            </Animated.View>
+            </View>
         )
     }
 }
